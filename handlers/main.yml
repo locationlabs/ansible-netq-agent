@@ -1,0 +1,14 @@
+---
+- name: restart rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted
+
+# Not sure if the netq restart command restarts both services, but seems safe?
+- name: Restart netq
+  systemd:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - netqd
+    - netq-agent

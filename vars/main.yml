@@ -1,0 +1,6 @@
+---
+netq_backend_config:
+  backend:
+    port: 6379
+    role: master
+    server: "{{ netq_backend_server|mandatory }}"

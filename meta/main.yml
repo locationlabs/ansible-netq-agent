@@ -1,0 +1,11 @@
+galaxy_info:
+  author: David Noriega
+  description: Install NetQ agent on Cumulus switches
+  company: Location Labs by Avast
+  license: Apache License 2.0
+  min_ansible_version: 1.9
+  platforms:
+    - name: CumulusLinux
+  galaxy_tags:
+    - networking
+dependencies: []
