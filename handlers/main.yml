@@ -5,7 +5,7 @@
     state: restarted
 
 # Not sure if the netq restart command restarts both services, but seems safe?
-- name: Restart netq
+- name: restart netq
   systemd:
     name: "{{ item }}"
     state: restarted
