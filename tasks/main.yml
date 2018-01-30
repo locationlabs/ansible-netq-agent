@@ -1,9 +1,9 @@
 ---
 # NetQ only supported on Cumulus 3.3+
 - name: Check Cumulus version
-  assert:
-    that:
-      - "ansible_lsb.release | version_compare('3.3', '>=')"
+  fail:
+    msg: "NetQ is only supported on Cumulus versions 3.3 and later"
+  when: ansible_lsb.release | version_compare('3.3', '<')
 
 - name: Add netq repo
   apt_repository:
