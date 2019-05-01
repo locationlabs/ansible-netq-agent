@@ -7,7 +7,7 @@
 
 - name: Add netq repo
   apt_repository:
-    repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-latest
+    repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 {{ netq_repo }}
     state: present
 
 # The netq package installs addtional config to rsyslog
