@@ -11,6 +11,7 @@ Cumulus Linux 3.x
 ## Role Variables
 
 * `netq_backend_server`: IP of the netq server
+* `netq_repo_version`: Version of the netq repo, e.g. "netq-1.4"
 
 ## Dependencies
 
