@@ -17,6 +17,14 @@ Cumulus Linux 3.x
 
 None
 
+## Notes
+
+This role will not handle the removal or existing repo entries in the event
+you are changing the repo version. This is left to the user. You could
+simply change "state: present" to "state: absent" for you previous
+version before updating to the new version.  
+
+
 ## Example Playbook
 
 ```yaml
