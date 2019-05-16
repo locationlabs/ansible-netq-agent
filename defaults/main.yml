@@ -1,0 +1,2 @@
+# defaul to "latest" unless overridden
+netq_repo_version: netq-latest
