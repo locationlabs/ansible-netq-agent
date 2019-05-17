@@ -12,9 +12,9 @@
 
 # The netq package installs addtional config to rsyslog
 - name: Install netq agent
-  apt:
+  package:
     name: cumulus-netq
-    update_cache: yes
+    state: present
   notify: restart rsyslog
 
 - name: Configure netq agent
