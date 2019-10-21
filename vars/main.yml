@@ -4,5 +4,8 @@ netq_backend_config:
     port: 6379
     role: master
     server: "{{ netq_backend_server|mandatory }}"
+# IG-8579: Enable link recovery messages
+  link:
+    enable: true
 
 netq_repo: "{{ netq_repo_version }}"
