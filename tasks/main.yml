@@ -5,6 +5,14 @@
     msg: "NetQ is only supported on Cumulus versions 3.3 and later"
   when: ansible_lsb.release | version_compare('3.3', '<')
 
+- name: Remove any old netq repos
+  apt_repository:
+    repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 {{ item }} 
+    state: absent
+  with_items:
+    - 'netq-1.4'
+    - 'netq-2.4'
+
 - name: Add netq repo
   apt_repository:
     repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 {{ netq_repo }}
@@ -13,12 +21,15 @@
 # The netq package installs addtional config to rsyslog
 - name: Install netq agent
   apt:
-    name: cumulus-netq
+    name: {{ item }}
     update_cache: yes
   notify: restart rsyslog
+  with_items:
+    - 'netq-agent' 
+    - 'netq-apps3'
 
 - name: Configure netq agent
   copy:
     content: "{{ netq_backend_config|to_nice_yaml }}"
-    dest: /etc/netq/config.d/backend_server.yml
+    dest: /etc/netq/config.d/netq.yml
   notify: restart netq
