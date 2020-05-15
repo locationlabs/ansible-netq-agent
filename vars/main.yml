@@ -1,8 +1,13 @@
 ---
+
 netq_backend_config:
-  backend:
-    port: 6379
-    role: master
+  netq-agent:
+    port: 31980
+    server: "{{ netq_backend_server|mandatory }}"
+    vrf: default
+  netq-cli:
+    netq-user: admin
+    port: 32708
     server: "{{ netq_backend_server|mandatory }}"
 
 netq_repo: "{{ netq_repo_version }}"
