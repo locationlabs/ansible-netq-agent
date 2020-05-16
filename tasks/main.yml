@@ -23,6 +23,7 @@
   apt:
     name: ['netq-agent', 'netq-apps']
     update_cache: yes
+    state: latest
   notify: restart rsyslog
 
 - name: Configure netq agent
