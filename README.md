@@ -23,8 +23,9 @@ None
 This role will handle the removal of existing 1.4 and 2.4 repo entries in the event
 you are changing the repo version from an earlier version. If the current version is 
 something other than 1.4 or 2.4 (like netq-latest) this is left to the user. You could
-simply change "state: present" to "state: absent" for you previous
-version before updating to the new version.  
+simply change "state: present" to "state: absent" for your previous
+version before updating to the new version or add the desired version 
+to be removed in the task: "Remove any old netq repos" in /task/main.yml
 
 If the versions 1.4 or 2.4 are already installed they will be upgraded to 3.0
 or latest depending on `netq_repo_version`. If the Cumulus Linux host has no
