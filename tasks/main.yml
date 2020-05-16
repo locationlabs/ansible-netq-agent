@@ -21,12 +21,9 @@
 # The netq package installs addtional config to rsyslog
 - name: Install netq agent
   apt:
-    name: "{{ item }}"
+    name: ['netq-agent', 'netq-apps']
     update_cache: yes
   notify: restart rsyslog
-  with_items:
-    - 'netq-agent' 
-    - 'netq-apps'
 
 - name: Configure netq agent
   copy:
