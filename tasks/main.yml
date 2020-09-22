@@ -12,7 +12,8 @@
   with_items:
     - 'netq-1.4'
     - 'netq-2.4'
-    
+    - 'netq-3.0'
+
 - name: Add netq repo
   apt_repository:
     repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 {{ netq_repo }}
