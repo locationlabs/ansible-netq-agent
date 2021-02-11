@@ -13,6 +13,7 @@
     - 'netq-1.4'
     - 'netq-2.4'
     - 'netq-3.0'
+    - 'netq-3.1'
 
 - name: Add netq repo
   apt_repository:
